@@ -43,12 +43,26 @@ helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) 
 
 				// Add icons for each resource
 				_.each($scope.resources, function(resource) {
-					resource.icon = 'images/pdf.png';	
+					if (endsWith(resource.file, '.pdf')) {
+						resource.icon = 'images/pdf.png';
+					} else if (endsWith(resource.file, '.mp4')) {
+						resource.icon = 'images/video.png';
+					} else {
+						resource.icon = 'images/generic.png';
+					}	
 				});
 			})
 			.error(function() {
 				$scope.error = 'Unable to fetch content.json. Ensure that this file exists in the root directory.';
 			});
 	};
+
+	/**
+	 * Utility method to check if a given string ends with another
+	 */
+	function endsWith(string, pattern) {
+		var d = string.length - pattern.length;
+		return d >= 0 && string.indexOf(pattern, d) === d;
+	}
 
 }]);
