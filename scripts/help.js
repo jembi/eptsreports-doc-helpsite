@@ -6,9 +6,12 @@ var helpApp = angular.module('help', []);
  */
 helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) {
 
-	$scope.filter = null;
-	$scope.error = null;
+	$scope.site = null;
 	$scope.resources = [];
+	$scope.error = null;
+
+	$scope.filter = null;
+	$scope.displayedResources = [];
 	$scope.appLabels = { 
 		"kenyaemr.registration": "Registration", 
 		"kenyaemr.intake": "Triage", 
@@ -19,27 +22,13 @@ helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) 
 	};
 
 	/**
-	 * Initializes the controller
+	 * Initializes the controller by loading content.json
 	 */
 	$scope.init = function() {
-		$scope.refresh();
-	};
-
-	/**
-	 * Initializes the controller
-	 */
-	$scope.refresh = function() {
 		$http.get('content.json')
 			.success(function(data) {
-				// Optionally filter resources by name
-				if ($scope.filter) {
-					var regex = new RegExp($scope.filter, 'gi');
-					$scope.resources = _.filter(data.resources, function(resource) {
-						return resource.name.search(regex) >= 0;
-					});
-				} else {
-					$scope.resources = data.resources;	
-				}
+				$scope.site = data.site;
+				$scope.resources = data.resources;
 
 				// Add icons for each resource
 				_.each($scope.resources, function(resource) {
@@ -51,10 +40,27 @@ helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) 
 						resource.icon = 'images/generic.png';
 					}	
 				});
+
+				$scope.refresh();
 			})
 			.error(function() {
 				$scope.error = 'Unable to fetch content.json. Ensure that this file exists in the root directory.';
 			});
+	};
+
+	/**
+	 * Initializes the controller
+	 */
+	$scope.refresh = function() {
+		// Optionally filter resources by name
+		if ($scope.filter) {
+			var regex = new RegExp($scope.filter, 'gi');
+			$scope.displayedResources = _.filter($scope.resources, function(resource) {
+				return resource.name.search(regex) >= 0;
+			});
+		} else {
+			$scope.displayedResources = $scope.resources;	
+		}
 	};
 
 	/**
