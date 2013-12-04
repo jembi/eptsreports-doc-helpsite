@@ -2,9 +2,9 @@
 var helpApp = angular.module('help', []);
 
 /**
- * 
+ * Help content controller
  */
-helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) {
+helpApp.controller('HelpContentCtrl', ['$scope', '$http', function($scope, $http) {
 
 	$scope.site = null;
 	$scope.resources = [];
@@ -29,6 +29,9 @@ helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) 
 			.success(function(data) {
 				$scope.site = data.site;
 				$scope.resources = data.resources;
+
+				// Update page title which is outside of controller scope
+				document.title = $scope.site.title;
 
 				// Add icons for each resource
 				_.each($scope.resources, function(resource) {
