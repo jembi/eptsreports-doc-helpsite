@@ -7,6 +7,7 @@ var helpApp = angular.module('help', []);
 helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) {
 
 	$scope.filter = null;
+	$scope.error = null;
 	$scope.resources = [];
 	$scope.appLabels = { 
 		"kenyaemr.registration": "Registration", 
@@ -28,8 +29,8 @@ helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) 
 	 * Initializes the controller
 	 */
 	$scope.refresh = function() {
-		$http.get('content.json').
-			success(function(data) {
+		$http.get('content.json')
+			.success(function(data) {
 				// Optionally filter resources by name
 				if ($scope.filter) {
 					var regex = new RegExp($scope.filter, 'gi');
@@ -44,6 +45,9 @@ helpApp.controller('HelpResources', ['$scope', '$http', function($scope, $http) 
 				_.each($scope.resources, function(resource) {
 					resource.icon = 'images/pdf.png';	
 				});
+			})
+			.error(function() {
+				$scope.error = 'Unable to fetch content.json. Ensure that this file exists in the root directory.';
 			});
 	};
 
