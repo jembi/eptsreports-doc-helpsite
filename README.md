@@ -1,4 +1,4 @@
-I-TECH HelpSite
+HelpSite [Prototype]
 ===============
 
 Overview
@@ -18,17 +18,17 @@ Create this file with the following format:
 	},
 
 	"resources": [
-  	{ 
-  		"name": "How to Create a Patient Record", 
-  		"file": "K_JobAid_1_CreatePt_13.2.pdf",
-  		"apps": [ "kenyaemr.registration" ] 
-  	},
-  	{ 
-  		"name": "How to Search for a Patient Record", 
-  		"file": "K_JobAid_2_SearchPt_13.2.pdf",
-  		"apps": [ "kenyaemr.registration", "kenyaemr.intake", "kenyaemr.medicalEncounter", "kenyaemr.medicalChart" ]  
-  	},
-	...
+	  	{ 
+	  		"name": "How to Create a Patient Record", 
+	  		"file": "K_JobAid_1_CreatePt_13.2.pdf",
+	  		"apps": [ "kenyaemr.registration" ] 
+	  	},
+	  	{ 
+	  		"name": "How to Search for a Patient Record", 
+	  		"file": "K_JobAid_2_SearchPt_13.2.pdf",
+	  		"apps": [ "kenyaemr.registration", "kenyaemr.intake", "kenyaemr.medicalEncounter" ]  
+	  	},
+		...
 	]
 }
 ``` 
