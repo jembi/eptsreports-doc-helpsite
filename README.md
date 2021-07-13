@@ -3,7 +3,7 @@ HelpSite [Prototype]
 
 Overview
 --------
-A simple prototype website for publishing training materials.
+A simple prototype website for publishing changes that take place during the report programming
 
 Usage
 -----
@@ -19,14 +19,14 @@ Create this file with the following format:
 
 	"resources": [
 	  	{ 
-	  		"name": "How to Create a Patient Record", 
-	  		"file": "K_JobAid_1_CreatePt_13.2.pdf",
-	  		"apps": [ "kenyaemr.registration" ] 
+	  		"name": "MER 2.5 requirements", 
+	  		"file": "mer2.5_requirements.pdf",
+	  		"apps": [] 
 	  	},
 	  	{ 
-	  		"name": "How to Search for a Patient Record", 
-	  		"file": "K_JobAid_2_SearchPt_13.2.pdf",
-	  		"apps": [ "kenyaemr.registration", "kenyaemr.intake", "kenyaemr.medicalEncounter" ]  
+	  		"name": "Changes in 2.6 enhancements", 
+	  		"file": "ehnacements.pdf",
+	  		"apps": []  
 	  	},
 		...
 	]

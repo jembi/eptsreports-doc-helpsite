@@ -13,12 +13,8 @@ helpApp.controller('HelpContentCtrl', ['$scope', '$http', function($scope, $http
 	$scope.filter = null;
 	$scope.displayedResources = [];
 	$scope.appLabels = { 
-		"kenyaemr.registration": "Registration", 
-		"kenyaemr.intake": "Triage", 
-		"kenyaemr.medicalEncounter": "Clinician", 
-		"kenyaemr.medicalChart": "Chart", 
-		"kenyaemr.reports": "Reports", 
-		"kenyaemr.admin": "Admin" 
+		"eptsReports.reports": "Reports",
+		"eptsReports.admin": "Admin"
 	};
 
 	/**

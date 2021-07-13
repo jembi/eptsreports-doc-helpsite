@@ -1,0 +1,24 @@
+{
+  "site": {
+    "title": "EPTS Reports Certification Dashboard Changes",
+    "description": "Dashboard of the main changes during the certification period for the APR, for MER and NON-MER indicators"
+  },
+
+  "resources": [
+    {
+      "name": "APR report indicators changes",
+      "file": "K_JobAid_1_CreatePt_13.2.pdf",
+      "apps": []
+    },
+    {
+      "name": "MER report indicators changes",
+      "file": "K_JobAid_2_SearchPt_13.2.pdf",
+      "apps": []
+    },
+    {
+      "name": "NON MER report indicators changes",
+      "file": "K_JobAid_2_SearchPt_13.2.pdf",
+      "apps": []
+    }
+  ]
+}
