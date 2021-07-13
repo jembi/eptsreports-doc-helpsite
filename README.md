@@ -1,5 +1,5 @@
-HelpSite [Prototype]
-===============
+# eptsreports-doc-helpsite
+Documentation of epts report module
 
 Overview
 --------
