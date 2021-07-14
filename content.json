@@ -16,9 +16,25 @@
       "apps": []
     },
     {
-      "name": "NON MER report indicators changes",
-      "file": "K_JobAid_2_SearchPt_13.2.pdf",
+      "name": "NON MER report indicators changes - pdf",
+      "file": "content/documents/NON MER report indicator changes.pdf",
+      "apps": []
+    },
+    {
+      "name": "MER report indicators changes - pdf",
+      "file": "content/documents/MER report indicator changes.pdf",
+      "apps": []
+    },
+    {
+      "name": "APR report indicators changes - pdf",
+      "file": "content/documents/APR report indicator changes.pdf",
+      "apps": []
+    },
+    {
+      "name": "APR report indicators changes - vdeo",
+      "file": "content/videos/file_example_MP4_480_1_5MG1.mp4",
       "apps": []
     }
+
   ]
 }
