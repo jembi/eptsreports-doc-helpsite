@@ -6,19 +6,35 @@
 
   "resources": [
     {
-      "name": "APR report indicators changes",
-      "file": "K_JobAid_1_CreatePt_13.2.pdf",
+      "name": "Release v2.0.1 - Reports update and Bug fixes - pdf",
+      "file": "content/documents/Reports update and Bug fixes.pdf",
       "apps": []
     },
     {
-      "name": "MER report indicators changes",
-      "file": "K_JobAid_2_SearchPt_13.2.pdf",
+      "name": "Release v2.0.1 - Reports update and Bug fixes - vdeo",
+      "file": "content/videos/file_example_MP4_480_1_5MG.mp4",
       "apps": []
     },
     {
-      "name": "NON MER report indicators changes",
-      "file": "K_JobAid_2_SearchPt_13.2.pdf",
+      "name": "NON MER report indicators changes - pdf",
+      "file": "content/documents/NON MER report indicator changes.pdf",
+      "apps": []
+    },
+    {
+      "name": "MER report indicators changes - pdf",
+      "file": "content/documents/MER report indicator changes.pdf",
+      "apps": []
+    },
+    {
+      "name": "APR report indicators changes - pdf",
+      "file": "content/documents/APR report indicator changes.pdf",
+      "apps": []
+    },
+    {
+      "name": "APR report indicators changes - vdeo",
+      "file": "content/videos/file_example_MP4_480_1_5MG1.mp4",
       "apps": []
     }
+
   ]
 }
