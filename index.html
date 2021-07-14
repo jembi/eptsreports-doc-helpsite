@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<script type="text/javascript" src="scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/underscore.min.js"></script>
+		<script type="text/javascript" src="scripts/angular.min.js"></script>
+		<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+		<script type="text/javascript" src="scripts/help.js"></script>
+		<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+		<link rel="icon" type="image/png" href="images/favicon.png">
+	</head>
+	<body ng-app="help" ng-controller="HelpContentCtrl" ng-init="init()">
+
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">{{ site.title }}</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Resources</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="alert alert-danger" ng-if="error">{{ error }}</div>
+
+			<div class="page-header">
+				<h1 id="resources">Resources</h1>
+			</div>
+
+			<p class="lead">{{ site.description }}</p>
+			<form class="form-inline" role="form">
+				<input style="width: 200px" class="form-control" placeholder="Filter by name" ng-model="filter" ng-change="refresh()" />
+			</form>
+
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="resource in displayedResources">
+					<img ng-src="{{ resource.icon }}" />&nbsp;&nbsp;<a ng-href="{{ resource.file }}" target="_blank">{{ resource.name }}</a>
+
+					<div style="float: right">
+						<span ng-repeat="app in resource.apps">
+							<span class="label label-default">{{ appLabels[app] }}</span>&nbsp;
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
